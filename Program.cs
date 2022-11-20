@@ -17,3 +17,27 @@ string [] startArray = new string [countArrayValue];
 	}
 	return array;
 }
+
+string [] SortArray (string [] array)
+{
+	int countNecessaryValue = 0;
+	string arrayValue = string.Empty;
+	for (int i = 0; i < array.Length; i++)
+	{
+		arrayValue = array[i];
+		if (arrayValue.Length <= 3) countNecessaryValue++;
+	}
+
+	string [] endArray = new string [countNecessaryValue];
+	int index = 0;
+	for (int i = 0; i < array.Length; i++)
+	{
+		arrayValue = array[i];
+		if (arrayValue.Length <= 3)
+		{
+			endArray[index] = array[i];
+			index++;
+		}
+	}
+	return endArray;
+}
